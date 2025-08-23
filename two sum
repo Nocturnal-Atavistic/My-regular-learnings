@@ -1,0 +1,14 @@
+nums = [3,1, 8, 2,4]
+target = 6
+
+for i in range(len(nums)):
+    for j in range (i+1, len(nums)):
+        if nums[i] + nums[j] == target:
+            print(f"{i}, {j}")
+    else:
+        pass    
+
+    # if i+j == target:
+    #     print(f"{nums.index(i)} , {nums.index(j)}")
+
+
