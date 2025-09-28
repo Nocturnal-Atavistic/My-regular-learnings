@@ -1,0 +1,75 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "Result #1",
+    "content": "SELECT * FROM USER2\r\nSELECT * FROM USER2 WHERE GENDER = \"M\"\r\nALTER TABLE USER2\r\nADD COLUMN AGE INT AFTER NAME\r\n\r\n\r\nUPDATE USER2\r\nSET AGE = CASE ID \r\n    WHEN 1 THEN 27\r\n    WHEN 2 THEN 22\r\n    WHEN 3 THEN 35\r\n    WHEN 4 THEN 20\r\n    WHEN 5 THEN 50\r\n    ELSE AGE\r\nEND \r\nWHERE ID in (1,2,3,4,5);\r\n\r\nCREATE TABLE STUDENTS2\r\n(\r\n    ID INT NOT NULL UNIQUE,\r\n    NAME VARCHAR (100) NOT NULL,\r\n    EMAIL VARCHAR (150) NOT NULL UNIQUE,\r\n    AGE TINYINT CHECK (AGE >= 18),\r\n    STATUS BOOLEAN DEFAULT 1\r\n)\r\n\r\nINSERT INTO STUDENTS2\r\n(ID, NAME, EMAIL, AGE)\r\nVALUES \r\n-- (1, \"HIM\", \"HIM@GMAIL.COM\", 27),\r\n-- (2, \"TIM\", \"TIM@GMAIL.COM\", 20),\r\n-- (3, \"KIM\", \"KIM@GMAIL.COM\", 30),\r\n-- (4, \"BIM\", \"BIM@GMAIL.COM\", 35)\r\n\r\n(5, \"JGOO\", \"JAGOO@GMAIL.COM\", 22),\r\n(6, \"NOBITA\", \"NOBITA@GMAIL.COM\", 21),\r\n(7, \"GIAN\", \"GIAN@GMAIL.COM\", 25)\r\n\r\nSELECT * FROM STUDENTS2\r\nUPDATE STUDENTS2\r\nSET NAME = 'JAGOO'\r\nWHERE ID = 5;\r\n\r\nSELECT * FROM STUDENTS2\r\nWHERE AGE >= 18 AND AGE <=25\r\n\r\nALTER TABLE STUDENTS2\r\nADD COLUMN CITY VARCHAR(150) AFTER AGE\r\n\r\nUPDATE STUDENTS2\r\nSET CITY = CASE ID \r\n    WHEN 1 THEN 'DUBAI'\r\n    WHEN 2 THEN 'YNR'\r\n    WHEN 3 THEN 'CHANDIGARH'\r\n    WHEN 4 THEN 'DELHI'\r\n    WHEN 5 THEN 'DUBAI'\r\n    WHEN 6 THEN 'DELHI'\r\n    WHEN 7 THEN 'SAN F'\r\n    ELSE CITY\r\nEND \r\nWHERE ID in (1,2,3,4,5,6,7);\r\n\r\nSELECT * FROM STUDENTS2\r\nWHERE CITY = \"DUBAI\" OR CITY = \"YNR\"\r\nWHERE CITY IN ('DUBAI', 'DELHI')\r\n\r\nWHERE NAME LIKE \"%O%\"\r\n\r\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": null,
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 69,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM USER2 WHERE GENDER = \"M\"\nALTER TABLE USER2\nADD COLUMN AGE INT AFTE' at line 2",
+                            "language": "ansi"
+                        },
+                        {
+                            "type": 0,
+                            "index": -1,
+                            "content": "✕ SQL Script execution completed in 23ms. 3 statements executed, 1 error occurred.",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 300,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 278
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 278,
+                            "length": 576
+                        },
+                        "contentStart": 280,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 854,
+                            "length": 370
+                        },
+                        "contentStart": 856,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
