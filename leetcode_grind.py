@@ -34,7 +34,28 @@ ans = Solution()
 final = ans.romanToInt("III")
 print(final)
 
+# Below code worked for all the cases, even where there was substraction needed in the Roman
 
+class Solution(object):
+    def romanToInt(self, s):
+        translations = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+        sum = 0
+        for i in range(len(s)-1):
+            if translations[s[i]] < translations[s[i+1]]: # checking if the next roman numeral is bigger than the previous one, if yes then the deduction is to be done.
+                sum -= translations[s[i]]
+            else:
+                sum += translations[s[i]]
+        sum += translations[s[-1]] # for adding the last diggit into the sum
+
+        return sum 
 
 
 
