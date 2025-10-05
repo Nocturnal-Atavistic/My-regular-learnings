@@ -58,4 +58,25 @@ class Solution(object):
         return sum 
 
 
+# Counting the word length from the last. "hello world", "hello World    " Now you look closely 2nd one is bit tough to get:
+
+# my this code worked for 2 cases where last word was not the space:
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        count = 0
+        for i in s[::-1]:
+            if i == " ":
+                break
+            else: 
+                count += 1
+
+        return count      
+
+
+
+
+
+
+
+
 
