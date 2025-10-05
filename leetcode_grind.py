@@ -73,6 +73,21 @@ class Solution(object):
         return count      
 
 
+# For such cases where there is lots of spaces in the last of the string and we have to calculate length of the last word we can use strip(), GOT the idea from Excel Trim function
+# code is :
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        k = s.strip()
+        count = 0
+        for i in k[::-1]:
+            if i == " ":
+                break
+            else:
+                count += 1
+
+        return count
+
 
 
 
