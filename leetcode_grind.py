@@ -125,4 +125,24 @@ class Solution(object):
         return count
 
 # but this code is not right for the list where elements are [] zero. because count is initialized at 1.
+# figured out the solution for empty list, we just have to add if condition in the beginning with if not nums: return 0
+class Solution(object):
+    def longestConsecutive(self, nums):
+        if not nums:            # this one
+            return 0
+
+        nu = sorted(nums)
+        count = 1
+        for i in range(len(nu)-1):
+            first = nu[i]
+            second = nu[i+1]
+            
+            if first+1 == second:
+                    count+= 1
+        
+        return count
+
+# but now new error came up: [9,1,4,7,3,-1,0,5,8,-1,6] this list should give answer 7 but not it is given 9:
+
+
 
