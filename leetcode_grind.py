@@ -109,5 +109,20 @@ class Solution(object):
                 return i
 
 
+# Leetcode problem: we have to find longest consecutive range of the numbers 
+# this code worked for the cases :
+class Solution(object):
+    def longestConsecutive(self, nums):
 
+        nu = sorted(nums)
+        count = 1
+        for i in range(len(nu)-1):
+            first = nu[i]
+            second = nu[i+1]
+            if first+1 == second:
+                count+= 1
+            
+        return count
+
+# but this code is not right for the list where elements are [] zero. because count is initialized at 1.
 
