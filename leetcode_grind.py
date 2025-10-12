@@ -142,7 +142,27 @@ class Solution(object):
         
         return count
 
-# but now new error came up: [9,1,4,7,3,-1,0,5,8,-1,6] this list should give answer 7 but not it is given 9:
+# but now new error came up: [9,1,4,7,3,-1,0,5,8,-1,6] this list should give answer 7 but no it is giving 9:
+
+
+
+
+# House Robber problem:
+# This solution is not considering the last value of the list:
+class Solution(object):
+    def rob(self, nums):
+        ans = 0
+        for i in range(len(nums)-3):
+            first = nums[i] + nums[i+2] + nums[-1]
+            second = sums[i+1] + nums[i+3]
+
+            current_max = max(first, second)
+            ans = max(ans, current_max)
+
+        return ans
+
+
+
 
 
 
